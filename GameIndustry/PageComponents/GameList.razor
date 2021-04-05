@@ -1,0 +1,31 @@
+﻿
+@if (ListOfItems is null)
+{
+    <div class="row text-center">
+        <div class="col">
+            <img src="https://i.pinimg.com/originals/d1/ab/97/d1ab977eb069821741f072bef1b77ded.gif" height="500" />
+        </div>
+    </div>
+}
+
+else if (ListOfItems.Count == 0)
+{
+    <div class="row text-center">
+        <div class="col">
+            <img src="https://www.discounted-market.com/frontend/img/no-item-found-here.png" height="500" />
+        </div>
+    </div>
+}
+else
+            {
+                <div class="row">
+                    @foreach (var item in ListOfItems)
+                    {
+                        <IndividualGame Game="item"/>
+                    }
+                </div>
+            }
+
+@code {
+    [Parameter] public List<GameModel> ListOfItems { get; set; }
+}

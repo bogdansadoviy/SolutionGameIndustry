@@ -1,0 +1,15 @@
+﻿@page "/"
+@inject IRepository repository
+
+<GameList ListOfItems="gameItemList"/>
+
+
+@code 
+{
+    List<GameModel> gameItemList = new();
+
+    protected override void OnInitialized()
+    {
+        gameItemList = repository.GetAllGames();
+    }
+}
