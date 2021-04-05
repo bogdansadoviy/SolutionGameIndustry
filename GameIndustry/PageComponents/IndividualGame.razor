@@ -25,12 +25,12 @@
 
 
 @code {
-    [Parameter] public GameModel Game { get; set; }
+        [Parameter] public GameModel Game { get; set; }
 
-    string url = string.Empty;
+        string url = string.Empty;
 
     protected override void OnInitialized()
     {
-        url = $"games/{Game.Id}";
+        url = $"games/{Game.Id}/{ Game.Name.Replace(" ", "-")}";
     }
 }
